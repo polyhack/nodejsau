@@ -194,16 +194,16 @@ async.parallel([
   console.log('Loaded data')
 })
 
-var css = 'html {background-color: #eeeeee;}body {margin: 0 auto;padding: 2em;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;font-size: 14px;line-height: 1.5em;color: #333333;background-color: #ffffff;-webkit-box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);-moz-box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);}h1, h2, h3, h4, h5, h6 {line-height: 1.3em;}img{border: 1px solid black;}'
-
-http.createServer(function (req, res) {
+function index(req, res, next) {
+  if ('/' != req.url) return next();
   res.writeHead(200, { 'Content-Type': 'text/html', 'Cache-Control': 'max-age=0' });
   res.write('<!doctype html>\n')
   res.write('<html><head>\n')
   res.write('<title>NodeJS.au</title>\n')
-  res.write('<style>' + css + '</style>\n')
+  res.write('<link rel="stylesheet" type="text/css" href="bootstrap.min.css">\n')
+  res.write('<link rel="stylesheet" type="text/css" href="style.css">\n')
   res.write('</head><body>\n')
-  res.write('<table><thead><tr><th>\n')
+  res.write('<table class="table table-striped"><thead><tr><th>\n')
   res.write([ '', 'Name', 'GitHub', 'Twitter', 'Location', 'Blog', 'Company', 'Hireable' ].join('</th><th>'))
   res.write('</th></tr></thead><tbody>\n')
   userData && userData.forEach(function (user) {
@@ -217,11 +217,18 @@ http.createServer(function (req, res) {
     res.write('<td>' + (user.blog ? '<a href="' + encodeURI(user.blog) + '">' + escape(user.blog) + '</a>' : '') + '</td>')
     //res.write('<td>' + (user.email ? '<a href="mailto:' + user.email + '">' + user.email + '</a>' : '') + '</td>')
     res.write('<td>' + escape(user.company || '')+ '</td>')
-    res.write('<td>' + (user.hireable ? 'Yes' : 'No') + '</td>')
+    res.write('<td>' + (user.hireable ? '<i class="icon-ok"></i>' : '') + '</td>')
     res.write('</tr>\n')
   })
   res.write('</tbody></table>\n')
   res.end('</body></html>\n')
-}).listen(8888)
+}
+
+var connect = require('connect')
+var app = connect()
+app.use(connect.static(__dirname + '/assets'))
+app.use(index)
+app.listen(8888)
 
 console.log('Listening on http://localhost:8888/')
+
