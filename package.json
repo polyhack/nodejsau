@@ -1,15 +1,16 @@
 {
-    "name": "npm-package-inspect"
-  , "author": ""
-  , "version": "1.0.0"
-  , "private": true
-  , "dependencies": {
-        "async": "*"
-      , "colors": "*"
-      , "request": "*"
-      , "read": "*"
-    }
-  , "engines": {
-        "node": "*"
-    }
+  "name": "npm-package-inspect",
+  "author": "",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "async": "*",
+    "colors": "*",
+    "request": "*",
+    "read": "*",
+    "connect": "~2.6.0"
+  },
+  "engines": {
+    "node": "*"
+  }
 }
