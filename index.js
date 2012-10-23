@@ -50,11 +50,11 @@ loadRepoList(function (err, repos) {
     async.forEach(users, function (user, callback) {
       processUser(user, function (err, data) {
         if (!err && data) {
-          if (data.message) {
+          if (data.message && !(/Not found/i).test(data.message)) {
             console.log('Error (' + user + '): ' + data.message)
           } else if ((data.location && AU_LOCATION_REGEX.test(data.location)) || (data.blog && AU_BLOG_REGEX.test(data.blog))) {
             var data = [ user, data.location, data.blog || '' ]
-            console.log('"' + data.join(", ") + '"')
+            console.log('"' + data.join('", "') + '"')
           }
         }
         callback()
