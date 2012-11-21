@@ -7,6 +7,8 @@ var fs      = require('fs')
   , async   = require('async')
   , request = require('request')
   , ghauth  = require('./ghauth')
+  , polyhackbotSecrets = require('./.polyhackbot')
+  , polyhackbot = require('polyhackbot')
 
   , GITHUB_USER_API_URL = 'https://api.github.com/users/{user}'
   , AU_LOCATION_REGEX   = /\Wau(s|st)?\W|australia|sydney|melbourne|brisbane|perth|darwin|adelaide|canberra|\W(nsw|vic|qld|new south wales|victoria|queensland|western australia|northern territory|south australia|tasmania)\W/i
@@ -232,3 +234,4 @@ app.listen(8888)
 
 console.log('Listening on http://localhost:8888/')
 
+polyhackbot(polyhackbotSecrets)

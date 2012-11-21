@@ -15,6 +15,7 @@
       , "request": "*"
       , "read": "*"
       , "connect": "*"
+      , "polyhackbot": "git+ssh://git@github.com/polyhack/polyhackbot.git"
     }
   , "engines": {
         "node": "*"
