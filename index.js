@@ -1,27 +1,27 @@
-
-
 var fs      = require('fs')
   , path    = require('path')
-  , http    = require('http')
   , npm     = require('npm')
   , async   = require('async')
   , request = require('request')
-  , ghauth  = require('./ghauth')
-  , polyhackbotSecrets = require('./.polyhackbot')
+  //, ghauth  = require('./ghauth')
   , polyhackbot = require('polyhackbot')
+  , polyhackbotSecrets = {
+        'ntwitter': JSON.parse(process.env.NTWITTER)
+      , 'ircPassword': process.env.FREENODE_PASS
+    }
+  , version  = require('./package').version
 
   , GITHUB_USER_API_URL = 'https://api.github.com/users/{user}'
   , AU_LOCATION_REGEX   = /\Wau(s|st)?\W|australia|sydney|melbourne|brisbane|perth|darwin|adelaide|canberra|\W(nsw|vic|qld|new south wales|victoria|queensland|western australia|northern territory|south australia|tasmania)\W/i
   , AU_BLOG_REGEX       = /\.au$/i
   , GITHUB_REPO_REGEX   = /github.com[:\/]([\.\-\w]+)\/([^$\/\.]+)/
-  , GITHUB_AUTHORIZATION_NOTE = 'nodejs.org.au'
-  , TOKEN_STORE         = path.join(__dirname, '.ghtoken.json')
+  //, GITHUB_AUTHORIZATION_NOTE = 'nodejs.org.au'
   , DATA_STORE          = path.join(__dirname, '.userdata.json')
   , TWITTER_MAPPING_STORE = path.join(__dirname, 'twittermapping.json')
   , IGNORE_USER_STORE     = path.join(__dirname, 'ignoreusers.json')
 
   , requestPool         = { maxSockets: 20 }
-  , ghconfig            = {}
+  , ghconfig            = { token: process.env.GHTOKEN }
   , userData
   , twitterMapping
   , ignoreUsers
@@ -57,6 +57,8 @@ var fs      = require('fs')
       request(opts, handle)
     }
 
+    /*
+    TODO: reenable this if the ghtoken doesn't exist
   , generateToken = function (callback) {
       ghauth(ghconfig, function (err) {
         if (err) return callback(err)
@@ -67,6 +69,7 @@ var fs      = require('fs')
         })
       })
     }
+    */
 
   , isAustralian = function (data) {
       if (data.location && AU_LOCATION_REGEX.test(data.location)) return true
@@ -127,23 +130,6 @@ var fs      = require('fs')
       }
     }
 
-  , loadTokenStore = function (callback) {
-      loadStartupData(TOKEN_STORE, function (err, data) {
-        if (err) {
-          generateToken(function (err, data) {
-            if (err) return callback(err)
-            fs.writeFile(TOKEN_STORE, JSON.stringify(data), function (err) {
-              ghconfig.token = data
-              callback(err)
-            })
-          })
-        } else {
-          ghconfig.token = data
-          callback()
-        }
-      })
-    }
-
   , loadUserDataStore = function (callback) {
       loadStartupData(DATA_STORE, function (err, data) {
         if (err || !data || !data.length) {
@@ -187,8 +173,7 @@ var fs      = require('fs')
 
 // these are all sync
 async.parallel([
-    loadTokenStore
-  , loadUserDataStore
+    loadUserDataStore
   , loadTwitterMappingStore
   , loadIgnoreusersStore
 ], function (err) {
@@ -234,4 +219,4 @@ app.listen(8888)
 
 console.log('Listening on http://localhost:8888/')
 
-polyhackbot(polyhackbotSecrets)
+polyhackbot(polyhackbotSecrets, 'nodejsau@' + version)
