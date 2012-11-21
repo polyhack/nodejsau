@@ -1,7 +1,7 @@
 {
     "name": "nodejsau"
   , "author": ""
-  , "version": "1.0.2"
+  , "version": "1.0.3-2"
   , "private": true
   , "main": "index.js"
   , "subdomain": "nodejsau"
@@ -15,7 +15,7 @@
       , "request": "*"
       , "read": "*"
       , "connect": "*"
-      , "polyhackbot": "git+ssh://git@github.com/polyhack/polyhackbot.git"
+      , "polyhackbot": "git://github.com/polyhack/polyhackbot.git"
     }
   , "engines": {
         "node": "*"
