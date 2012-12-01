@@ -1,0 +1,35 @@
+{# SWIG TEMPLATE SEE: https://github.com/paularmstrong/swig/tree/master/docs #}
+
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <title>Node.js Australia User Group</title>
+  <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <span class="brand">Node.js Australia User Group</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+
+    {% block content %}{% endblock %}
+
+  </div>
+
+  <hr/>
+  <footer>
+    <div class="container-fluid">
+      <p class="muted"><small>&copy; Node.js Australia User Group (a.k.a #polyhack) 2012</small></p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,3 +1,21 @@
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+.navbar-inverse .brand {
+  color: #ccc;
+}
 table.table td {
   vertical-align: middle;
+}
+td.avatar {
+  text-align: center;
+}
+.avatar img {
+  height: 64px;
+  width: 64px;
+  box-shadow: 1px 1px 8px rgba(0,0,0,0.33);
+}
+.name {
+  font-weight: bold;
 }

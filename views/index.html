@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{# SWIG TEMPLATE SEE: https://github.com/paularmstrong/swig/tree/master/docs #}
+
+{% block content %}
+
+  <h1>Australian Node.js developers</h1>
+  <p>This list is gathered from authors of packages published to <a href="https://npmjs.org/">npm</a>, cross-referenced with <a href="http://github.com/">GitHub</a> repositories and the <i>location</i> listed for the owners of those repositories.</p>
+  <p>Find us on <b>Google Groups</b> @ <a href="https://groups.google.com/forum/?fromgroups=#!forum/nodejsau">nodejs.au</a>, on <b><a href="http://freenode.net/">Freenode</a></b> @ #polyhack and on <b>GitHub</b> @ <a href="http://github.com/polyhack">polyhack</a> (where you can also find the source of this site).</p>
+
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Name</th>
+        <th>GitHub</th>
+        <th>Twitter</th>
+        <th>Location</th>
+        <th>Blog / URL</th>
+        <th>Company</th>
+        <th>Hireable</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for user in users %}
+      <tr>
+        <td class="avatar"><img src="{{ user.avatar }}"></td>
+        <td class="name">{{ user.name }}</td>
+        <td class="github"><a href="{{ user.github }}">{{ user.user }}</a></td>
+        <td class="twitter">{% if twitterMapping[user.user] %}<a href="https://twitter.com/{{ twitterMapping[user.user] }}">@{{ twitterMapping[user.user] }}{% endif %}</a></td>
+        <td class="location">{% if user.location %}{{ user.location }}{% endif %}</td>
+        <td class="blog">{% if user.blog %}<a href="{{ user.blog }}">{{ user.blog }}{% endif %}</a></td>
+        <td class="company">{% if user.company %}{{ user.company }}{% endif %}</td>
+        <td class="hireable">{% if user.hireable %}Yes{% endif %}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock %}

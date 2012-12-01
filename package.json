@@ -1,7 +1,7 @@
 {
     "name": "nodejsau"
   , "author": ""
-  , "version": "1.0.7-3"
+  , "version": "1.0.7-5"
   , "private": true
   , "main": "index.js"
   , "subdomain": "nodejsau"
@@ -16,6 +16,9 @@
       , "read": "*"
       , "connect": "*"
       , "polyhackbot": "git://github.com/polyhack/polyhackbot.git"
+      , "splink": "*"
+      , "splink-smvc": "*"
+      , "swig": "*"
     }
   , "engines": {
         "node": "*"
