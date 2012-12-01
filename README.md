@@ -21,4 +21,11 @@ Extract the token from the line that has `"token": "..."` and then:
 export GHTOKEN=token here
 ```
 
-Or, find us on Freenode @ #polyhack and ask!
+To get [Polyhackbot](https://github.com/polyhack/polyhackbot) working as well you'll need Twitter authentication tokens. See [NTwitter](https://github.com/AvianFlu/ntwitter/#setup-api) for details about the format this takes. You should set up your auth data in a JSON string with the 2 auth & 2 secret keys and put them into an environment variable:
+
+```sh
+export NTWITTER='{"consumer_key": "xxx", "consumer_secret": "yyy", "access_token_key": "aa", "access_token_secret": "bb"}'
+export FREENODE_PASS=password # password to authenticate the bot with NickServ
+```
+
+You can find us on Freenode @ #polyhack if you have questions.

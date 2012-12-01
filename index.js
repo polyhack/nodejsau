@@ -21,3 +21,5 @@ splinksmvc({
       , processor  : 'swig'
     }
 }).start()
+
+require('./lib/polyhackbot')()
