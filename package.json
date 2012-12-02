@@ -1,10 +1,14 @@
 {
     "name": "nodejsau"
   , "author": ""
-  , "version": "1.1.0"
+  , "version": "1.1.0-1"
   , "private": true
   , "main": "index.js"
   , "subdomain": "nodejsau"
+  , "domains": [
+        "nodejs.org.au"
+      , "www.nodejs.org.au"
+    ]
   , "scripts": {
         "start": "index.js"
     }
