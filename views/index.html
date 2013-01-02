@@ -13,6 +13,7 @@
       <tr>
         <th></th>
         <th>Name</th>
+        <th>GitHub Node Repos</th>
         <th>GitHub</th>
         <th>Twitter</th>
         <th>Location</th>
@@ -26,6 +27,7 @@
       <tr>
         <td class="avatar"><img src="{{ user.avatar }}"></td>
         <td class="name">{{ user.name }}</td>
+        <td class="repos">{{ user.repos.length }}</a></td>
         <td class="github"><a href="{{ user.github }}">{{ user.user }}</a></td>
         <td class="twitter">{% if twitterMapping[user.user] %}<a href="https://twitter.com/{{ twitterMapping[user.user] }}">@{{ twitterMapping[user.user] }}{% endif %}</a></td>
         <td class="location">{% if user.location %}{{ user.location }}{% endif %}</td>
