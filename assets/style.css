@@ -19,3 +19,6 @@ td.avatar {
 .name {
   font-weight: bold;
 }
+.popover {
+  width: 500px;
+}

@@ -1,0 +1,10 @@
+{
+  "name": "nodejsau-ender",
+  "version": "0.0.0",
+  "main": "./app.js",
+  "dependencies": {
+    "qwery": "*",
+    "ender-bootstrap-popover": "*"
+  },
+  "private": true
+}
