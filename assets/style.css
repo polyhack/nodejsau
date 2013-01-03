@@ -12,8 +12,8 @@ td.avatar {
   text-align: center;
 }
 .avatar img {
-  height: 64px;
-  width: 64px;
+  max-height: 64px;
+  max-width: 64px;
   box-shadow: 1px 1px 8px rgba(0,0,0,0.33);
 }
 .name {
