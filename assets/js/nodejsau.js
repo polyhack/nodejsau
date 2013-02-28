@@ -1,7 +1,7 @@
 /*!
   * =============================================================
   * Ender: open module JavaScript framework (https://ender.no.de)
-  * Build: ender build ./ --output nodejsau
+  * Build: ender build . --output nodejsau.js
   * Packages: ender-js@0.4.4-1 qwery@3.4.0 bean@1.0.2 bonzo@1.2.8 bowser@0.2.0 domready@0.2.11 traversty@1.0.2 ender-bootstrap-base@2.2.1 ender-bootstrap-transition@2.2.1 ender-bootstrap-tooltip@2.2.1 ender-bootstrap-popover@2.2.1 nodejsau-ender@0.0.0
   * =============================================================
   */
