@@ -1,6 +1,6 @@
 var path        = require('path')
   , splinksmvc  = require('splink-smvc')
-  , isDev        = require('./lib/static-data').isDev
+  , isDev       = require('./lib/static-data').isDev
 
 // init swig with 'root' param, this isn't done by `consolidate` but required by
 // swig if you want to reference templates from within templates
@@ -22,4 +22,4 @@ splinksmvc({
     }
 }).start()
 
-require('./lib/polyhackbot')()
+require('./bot')
