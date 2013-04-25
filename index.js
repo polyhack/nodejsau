@@ -16,6 +16,7 @@ splinksmvc({
   , 'static' : {
         path       : path.join(__dirname, './assets')
       , url        : '/'
+      , cache      : isDev ? false : {}
     }
   , 'views'  : {
         path       : path.join(__dirname, './views')

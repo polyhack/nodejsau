@@ -2,7 +2,7 @@
   * =============================================================
   * Ender: open module JavaScript framework (https://ender.no.de)
   * Build: ender build . --output nodejsau.js
-  * Packages: ender-js@0.4.4-1 qwery@3.4.0 bean@1.0.2 bonzo@1.2.8 bowser@0.2.0 domready@0.2.11 traversty@1.0.2 ender-bootstrap-base@2.2.1 ender-bootstrap-transition@2.2.1 ender-bootstrap-tooltip@2.2.1 ender-bootstrap-popover@2.2.1 nodejsau-ender@0.0.0
+  * Packages: ender-js@0.4.4-1 qwery@3.4.1 bean@1.0.3 bonzo@1.2.8 bowser@0.2.0 domready@0.2.11 traversty@1.0.4 ender-bootstrap-base@2.2.1 ender-bootstrap-transition@2.2.1 ender-bootstrap-tooltip@2.2.1 ender-bootstrap-popover@2.2.1 nodejsau-ender@0.0.0
   * =============================================================
   */
 
@@ -88,6 +88,8 @@
 
   Ender.prototype.$ = ender // handy reference to self
 
+  // dev tools magic
+  Ender.prototype.slice = function () { throw new Error('Not implemented') }
 
   function ender(s, r) {
     return new Ender(s, r)
@@ -139,7 +141,7 @@
 
   (function (name, context, definition) {
     if (typeof module != 'undefined' && module.exports) module.exports = definition()
-    else if (typeof context['define'] == 'function' && context['define']['amd']) define(definition)
+    else if (typeof define == 'function' && define.amd) define(definition)
     else context[name] = definition()
   })('qwery', this, function () {
     var doc = document
@@ -500,7 +502,7 @@
     return qwery
   });
 
-  provide("qwery", module.exports);
+  if (typeof provide == "function") provide("qwery", module.exports);
 
   (function ($) {
     var q = function () {
@@ -576,11 +578,14 @@
     * https://github.com/fat/bean
     * MIT license
     */
-  !(function (name, context, definition) {
-    if (typeof module != 'undefined' && module.exports) module.exports = definition(name, context);
-    else if (typeof define == 'function' && typeof define.amd  == 'object') define(definition);
-    else context[name] = definition(name, context);
-  }('bean', this, function (name, context) {
+  (function (name, context, definition) {
+    if (typeof module != 'undefined' && module.exports) module.exports = definition()
+    else if (typeof define == 'function' && define.amd) define(definition)
+    else context[name] = definition()
+  })('bean', this, function (name, context) {
+    name    = name    || 'bean'
+    context = context || this
+
     var win            = window
       , old            = context[name]
       , namespaceRegex = /[^\.]*(?=\..*)\.|.*/
@@ -1307,9 +1312,8 @@
     setSelectorEngine()
 
     return bean
-  }));
-
-  provide("bean", module.exports);
+  });
+  if (typeof provide == "function") provide("bean", module.exports);
 
   !function ($) {
     var b = require('bean')
@@ -2512,7 +2516,7 @@
     return bonzo
   }); // the only line we care about using a semi-colon. placed here for concatenation tools
 
-  provide("bonzo", module.exports);
+  if (typeof provide == "function") provide("bonzo", module.exports);
 
   (function ($) {
 
@@ -2775,7 +2779,7 @@
     return bowser
   })
 
-  provide("bowser", module.exports);
+  if (typeof provide == "function") provide("bowser", module.exports);
   $.ender(module.exports);
 }());
 
@@ -2837,7 +2841,7 @@
         loaded ? fn() : fns.push(fn)
       })
   })
-  provide("domready", module.exports);
+  if (typeof provide == "function") provide("domready", module.exports);
 
   !function ($) {
     var ready = require('domready')
@@ -2862,11 +2866,14 @@
     * License: MIT
     */
 
-  !(function (name, definition) {
-    if (typeof module !== 'undefined') module.exports = definition()
-    else if (typeof define === 'function' && define.amd) define(name, definition)
-    else this[name] = definition()
-  }('traversty', function () {
+  (function (name, context, definition) {
+    if (typeof module != 'undefined' && module.exports)
+      module.exports = definition()
+    else if (typeof define == 'function' && define.amd)
+      define(definition)
+    else
+      context[name] = definition()
+  })('traversty', this, function () {
 
     var context = this
       , old = context.traversty
@@ -2878,7 +2885,8 @@
         // feature test to find native matchesSelector()
       , matchesSelector = (function (el, pfx, name, i, ms) {
           while (i < pfx.length)
-            if (el[ms = pfx[i++] + name]) return ms
+            if (el[ms = pfx[i++] + name])
+              return ms
         }(html, [ 'msM', 'webkitM', 'mozM', 'oM', 'm' ], 'atchesSelector', 0))
 
       , Kfalse = function () { return false }
@@ -2933,9 +2941,9 @@
           return function (selector, el) {
             if (/,/.test(selector)) {
               var ret = [], i = -1, els = el.getElementsByTagName('*')
-              while (++i < els.length) {
-                if (isElement(els[i]) && selectorMatches(selector, els[i])) ret.push(els[i])
-              }
+              while (++i < els.length)
+                if (isElement(els[i]) && selectorMatches(selector, els[i]))
+                  ret.push(els[i])
               return ret
             }
             return engineSelect(selector, el)
@@ -2953,7 +2961,9 @@
                 return container !== element && container.contains(element)
               }
             : function (element, container) { // old smelly browser
-                while (element = element.parentNode) if (element === container) return 1
+                while (element = element.parentNode)
+                  if (element === container)
+                    return 1
                 return 0
               }
 
@@ -2969,7 +2979,8 @@
                 break
               }
             }
-            if (!has) a.push(ar[i])
+            if (!has)
+              a.push(ar[i])
           }
           return a
         }
@@ -2980,7 +2991,8 @@
           while (i < l) {
             j = 0
             l2 = (res = fn(els[i], i++)).length
-            while (j < l2) ret.push(res[j++])
+            while (j < l2)
+              ret.push(res[j++])
           }
           return ret
         }
@@ -3003,7 +3015,11 @@
                       && (index === null || i-- === 0)) {
                     // this concat vs push is to make sure we add elements to the result array
                     // in reverse order when doing a previous(selector) and up(selector)
-                    index === null && method !== 'nextSibling' ? ret = [el].concat(ret) : ret.push(el)
+                    index === null
+                        && method != 'nextSibling'
+                        && method != 'parentNode'
+                      ? ret.unshift(el)
+                      : ret.push(el)
                   }
                   el = el[method]
                 }
@@ -3014,8 +3030,10 @@
 
         // given an index & length, return a 'fixed' index, fixes non-numbers & neative indexes
       , eqIndex = function (length, index, def) {
-          if (index < 0) index = length + index
-          if (index < 0 || index >= length) return null
+          if (index < 0)
+            index = length + index
+          if (index < 0 || index >= length)
+            return null
           return !index && index !== 0 ? def : index
         }
 
@@ -3023,7 +3041,8 @@
       , filter = function (els, fn) {
           var arr = [], i = 0, l = els.length
           for (; i < l; i++)
-            fn(els[i], i) && arr.push(els[i])
+            if (fn(els[i], i))
+              arr.push(els[i])
           return arr
         }
 
@@ -3053,7 +3072,8 @@
             if (els) {
               els = unique(!els.nodeType && !isUndefined(els.length) ? els : [ els ])
               var i = this.length = els.length
-              while (i--) this[i] = els[i]
+              while (i--)
+                this[i] = els[i]
             }
           }
 
@@ -3101,10 +3121,13 @@
                 var self = this
                   , arr = slice.call(this, 0)
                   , i = 0, l = arr.length
+
                 for (; i < l; i++) {
                   arr[i] = arr[i].parentNode.firstChild
-                  while (!isElement(arr[i])) arr[i] = arr[i].nextSibling
+                  while (!isElement(arr[i]))
+                    arr[i] = arr[i].nextSibling
                 }
+
                 if (isUndefined(selector))
                   selector = '*'
 
@@ -3169,7 +3192,8 @@
                 var i = 0, l = this.length
                   , fn = filterFn(slfn)
                 for (; i < l; i++)
-                  if (fn(this[i], i)) return true
+                  if (fn(this[i], i))
+                    return true
                 return false
               }
 
@@ -3201,9 +3225,8 @@
             var key, method
             for (key in methods) {
               method = methods[key]
-              if (typeof method == 'function') {
+              if (typeof method == 'function')
                 T.prototype[key] = method
-              }
             }
           }
 
@@ -3237,7 +3260,7 @@
                 // perhaps it's an selector(x).is(y) type selector?
                 ss = s('a', e)
                 _selectorMatches = isFunction(ss._is)
-                  ? function (selector, el) { return s(el)._is(selector) } // original .is(), replaced by Enderbridge
+                  ? function (selector, el) { return s(el)._is(selector) } // original .is(), replaced by Ender bridge
                   : isFunction(ss.matching)
                     ? function (selector, el) { return s(el).matching(selector).length > 0 }
                     : isFunction(ss.is) && !ss.is.__ignore
@@ -3259,10 +3282,13 @@
                   throw new Error('Traversty: couldn\'t make selector engine\'s `matchesSelector` work')
 
               // basic select
-              if ((r = select('b,a', e)).length !== 2) throw new Error('Traversty: don\'t know how to use this selector engine')
+              if ((r = select('b,a', e)).length !== 2)
+                throw new Error('Traversty: don\'t know how to use this selector engine')
+
               // check to see if the selector engine has given us the results in document-order
               // and if not, work around it
               _selectorFind = r[0] === a ? select : createUnorderedEngineSelectorFind(select, _selectorMatches)
+
               // have we done enough to get a working `selectorFind`?
               if ((r = _selectorFind('b,a', e)).length !== 2 || r[0] !== a)
                 throw new Error('Traversty: couldn\'t make selector engine work')
@@ -3270,8 +3296,9 @@
               selectorMatches = _selectorMatches
               selectorFind = _selectorFind
             } catch (ex) {
-              if (isString(ex)) throw ex
-              throw new Error('Traversty: error while figuring out how the selector engine works: ' + (ex.message || ex))
+              throw isString(ex)
+                ? ex
+                : new Error('Traversty: error while figuring out how the selector engine works: ' + (ex.message || ex))
             } finally {
               e = null
             }
@@ -3288,9 +3315,8 @@
         }())
  
     return traversty
-  }));
-
-  provide("traversty", module.exports);
+  });
+  if (typeof provide == "function") provide("traversty", module.exports);
 
   /*global ender:true*/
 
@@ -3518,7 +3544,7 @@
 
   }(ender))
 
-  provide("ender-bootstrap-base", module.exports);
+  if (typeof provide == "function") provide("ender-bootstrap-base", module.exports);
   $.ender(module.exports);
 }());
 
@@ -3585,7 +3611,7 @@
 
     })
   }(require('ender-bootstrap-base-faker'))
-  provide("ender-bootstrap-transition", module.exports);
+  if (typeof provide == "function") provide("ender-bootstrap-transition", module.exports);
   $.ender(module.exports);
 }());
 
@@ -3868,7 +3894,7 @@
     , html: false
     }
   }(require('ender-bootstrap-base-faker'))
-  provide("ender-bootstrap-tooltip", module.exports);
+  if (typeof provide == "function") provide("ender-bootstrap-tooltip", module.exports);
   $.ender(module.exports);
 }());
 
@@ -3978,7 +4004,7 @@
     , template: '<div class="popover"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>'
     })
   }(require('ender-bootstrap-base-faker'))
-  provide("ender-bootstrap-popover", module.exports);
+  if (typeof provide == "function") provide("ender-bootstrap-popover", module.exports);
   $.ender(module.exports);
 }());
 
@@ -4008,8 +4034,20 @@
         e.preventDefault()
         cleanupPopover()
         $activePopover = $(e.target)
+
+        var $tip = $activePopover.data('popover').$tip
+          , top  = $tip.css('top').replace(/px$/, '') * 1
+
+        if (top < 70) {
+          $tip.css({ top: '70px' })
+          $tip.down('.arrow').css('top', $activePopover.offset().top - 70 + 8)
+        }
+
+        $tip.down('.description').each(function () {
+          this.innerHTML = this.innerHTML.replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        })
       })
   })
-  provide("nodejsau-ender", module.exports);
+  if (typeof provide == "function") provide("nodejsau-ender", module.exports);
   $.ender(module.exports);
 }());
