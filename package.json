@@ -1,30 +1,25 @@
 {
-    "name": "nodejsau",
-    "author": "",
-    "version": "1.3.7",
-    "private": true,
-    "main": "index.js",
-    "subdomain": "nodejsau",
-    "domains": [
-        "nodejs.org.au",
-        "www.nodejs.org.au"
-    ],
-    "scripts": {
-        "start": "index.js"
-    },
-    "dependencies": {
-        "npm": "*",
-        "async": "*",
-        "colors": "*",
-        "request": "*",
-        "read": "*",
-        "connect": "*",
-        "polyhackbot": "git://github.com/polyhack/polyhackbot.git",
-        "splink": "*",
-        "splink-smvc": "*",
-        "swig": "*"
-    },
-    "engines": {
-        "node": "*"
-    }
+  "name": "nodejsau",
+  "author": "",
+  "version": "1.3.7",
+  "private": true,
+  "main": "index.js",
+  "subdomain": "nodejsau",
+  "domains": [
+    "nodejs.org.au",
+    "www.nodejs.org.au"
+  ],
+  "scripts": {
+    "start": "index.js"
+  },
+  "dependencies": {
+    "polyhackbot": "git://github.com/polyhack/polyhackbot.git",
+    "async": "~0.2.7",
+    "swig": "~0.13.5",
+    "splink-smvc": "0.0.0-a19",
+    "request": "~2.20.0"
+  },
+  "engines": {
+    "node": "*"
+  }
 }
