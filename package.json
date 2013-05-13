@@ -1,7 +1,7 @@
 {
   "name": "nodejsau",
   "author": "",
-  "version": "2.2.3",
+  "version": "2.3.0",
   "private": true,
   "main": "index.js",
   "subdomain": "nodejsau",
@@ -13,11 +13,9 @@
     "start": "index.js"
   },
   "dependencies": {
-    "polyhackbot": "git://github.com/polyhack/polyhackbot.git",
-    "async": "~0.2.7",
     "swig": "~0.13.5",
     "splink-smvc": "0.0.0-a19",
-    "request": "~2.20.0"
+    "npm-maintainers-au": "0.0.0"
   },
   "engines": {
     "node": "*"
