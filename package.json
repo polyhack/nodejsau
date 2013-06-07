@@ -1,7 +1,7 @@
 {
   "name": "nodejsau",
   "author": "",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "private": true,
   "main": "index.js",
   "subdomain": "nodejsau",
@@ -15,7 +15,7 @@
   "dependencies": {
     "swig": "~0.13.5",
     "splink-smvc": "0.0.0-a19",
-    "npm-maintainers-au": "0.0.0"
+    "npm-maintainers-au": "~0.0.0"
   },
   "engines": {
     "node": "*"
