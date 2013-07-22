@@ -82,12 +82,13 @@ td.avatar {
   max-width: 1100px;
 }
 
-.post-content {
+.post-body {
   margin: 1em 0 4em 0;
+  line-height: 150%;
 }
 
 .post-meta p {
-  font-size: 0.7em;
+  font-size: 90%;
   color: #777;
   margin: 0;
 }
@@ -162,7 +163,7 @@ pre code, pre tt {
   background: #272822;
   border-radius: 5px;
   max-width: 900px;
-  margin: 1em auto;
+  margin: 2em auto;
   padding: 1em;
 }
 
