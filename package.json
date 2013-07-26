@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "swig": "~0.13.5",
-    "splink-smvc": "*",
+    "splinky": "~0.1.0",
     "npm-maintainers-au": "*",
     "hyperquest": "~0.1.7",
     "bl": "~0.1.1",

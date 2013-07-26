@@ -83,8 +83,13 @@ td.avatar {
 }
 
 .post-body {
-  margin: 1em 0 4em 0;
+  margin: 1em 0;
   line-height: 150%;
+}
+
+.post-comments {
+  margin-bottom: 3em;
+  font-style: italic;
 }
 
 .post-meta p {
