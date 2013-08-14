@@ -1,7 +1,7 @@
 {
   "name": "nodejsau",
   "author": "",
-  "version": "2.5.3",
+  "version": "2.5.3-1",
   "private": true,
   "main": "index.js",
   "subdomain": "nodejsau",
@@ -12,7 +12,8 @@
     "www.ǝpou.com",
     "mmm.ǝpou.com",
     "xn--pou-5eb.com",
-    "www.xn--pou-5eb.com"
+    "www.xn--pou-5eb.com",
+    "mmm.xn--pou-5eb.com"
   ],
   "scripts": {
     "start": "index.js"
