@@ -1,13 +1,16 @@
 {
   "name": "nodejsau",
   "author": "",
-  "version": "2.5.1",
+  "version": "2.5.2",
   "private": true,
   "main": "index.js",
   "subdomain": "nodejsau",
   "domains": [
     "nodejs.org.au",
-    "www.nodejs.org.au"
+    "www.nodejs.org.au",
+    "ǝpou.com",
+    "www.ǝpou.com",
+    "mmm.ǝpou.com"
   ],
   "scripts": {
     "start": "index.js"
