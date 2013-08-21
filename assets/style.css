@@ -97,6 +97,11 @@ td.avatar {
   border-bottom: 1px dotted lightgrey;
   padding: 2em 0;
 }
+
+.post h2 a {
+  color: black;
+}
+
 .post-body {
   line-height: 150%;
   margin-bottom: 1em;

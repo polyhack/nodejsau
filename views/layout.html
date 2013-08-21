@@ -4,9 +4,15 @@
 <html lang="en-us">
 <head>
   <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-  <title>Australian Node.js Developers</title>
-  <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>
+    {% if title %}
+      [Australian Node.js Developers]: {{ title }}
+    {% else %}
+      Australian Node.js Developers
+    {% endif %}
+  </title>
+  <link rel="stylesheet" type="text/css" href="/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/style.css">
   <link href='http://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
 </head>
 <body>
@@ -16,8 +22,8 @@
       <div class="container-fluid">
         <span class="brand">Australian Node.js Developers</span>
         <ul class="nav nav-pills">
-          <li><a href="#posts">Posts</a></li>
-          <li><a href="#developers">Developers</a></li>
+          <li><a href="/#posts">Posts</a></li>
+          <li><a href="/#developers">Developers</a></li>
         </ul>
         <img class="logo pull-right" src="/img/node.svg">
       </div>
@@ -37,6 +43,6 @@
     </div>
   </footer>
 
-  <script src="js/nodejsau.js" async></script>
+  <script src="/js/nodejsau.js" async></script>
 </body>
 </html>

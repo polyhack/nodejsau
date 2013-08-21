@@ -1,0 +1,10 @@
+{% if posts %}
+
+<div class="posts page">
+
+  {% for post in posts %}
+    {% include "_post.html" %}
+  {% endfor %}
+
+</div>
+{% endif %}
