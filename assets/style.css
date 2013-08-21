@@ -49,6 +49,12 @@ body {
   padding-top: 8px;
 }
 
+.navbar-inverse .nav>li>a.active {
+  color: #eee;
+  background: rgba(0,0,0,0.1);
+  border-left: 1px solid rgba(0,0,0,0.1);
+}
+
 body > .container-fluid {
   margin-top: 20px;
 }
