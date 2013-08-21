@@ -2,7 +2,7 @@
   * =============================================================
   * Ender: open module JavaScript framework (https://ender.no.de)
   * Build: ender build . --output nodejsau.js
-  * Packages: ender-js@0.4.4-1 qwery@3.4.1 bean@1.0.3 bonzo@1.2.8 bowser@0.2.0 domready@0.2.11 traversty@1.0.4 ender-bootstrap-base@2.2.1 ender-bootstrap-transition@2.2.1 ender-bootstrap-tooltip@2.2.1 ender-bootstrap-popover@2.2.1 nodejsau-ender@0.0.0
+  * Packages: ender-js@0.4.5 qwery@3.4.1 bean@1.0.4 bonzo@1.2.8 bowser@0.2.0 domready@0.2.12 traversty@1.0.4 ender-bootstrap-base@2.2.1 ender-bootstrap-transition@2.2.1 ender-bootstrap-tooltip@2.2.1 ender-bootstrap-popover@2.2.1 nodejsau-ender@0.0.0
   * =============================================================
   */
 
@@ -88,14 +88,14 @@
 
   Ender.prototype.$ = ender // handy reference to self
 
-  // dev tools magic
-  Ender.prototype.slice = function () { throw new Error('Not implemented') }
+  // dev tools secret sauce
+  Ender.prototype.splice = function () { throw new Error('Not implemented') }
 
   function ender(s, r) {
     return new Ender(s, r)
   }
 
-  ender['_VERSION'] = '0.4.3-dev'
+  ender['_VERSION'] = '0.4.5'
 
   ender.fn = Ender.prototype // for easy compat to jQuery plugins
 
@@ -1288,6 +1288,7 @@
           , remove            : off
           , clone             : clone
           , fire              : fire
+          , Event             : Event
           , setSelectorEngine : setSelectorEngine
           , noConflict        : function () {
               context[name] = old
@@ -2804,7 +2805,8 @@
       , addEventListener = 'addEventListener'
       , onreadystatechange = 'onreadystatechange'
       , readyState = 'readyState'
-      , loaded = /^loade|c/.test(doc[readyState])
+      , loadedRgx = hack ? /^loaded|^c/ : /^loaded|c/
+      , loaded = loadedRgx.test(doc[readyState])
 
     function flush(f) {
       loaded = 1
@@ -4047,7 +4049,58 @@
           this.innerHTML = this.innerHTML.replace(/</g, '&lt;').replace(/>/g, '&gt;')
         })
       })
+
+    //// Navigation/Page Stuff ////
+
+    $(window).on('hashchange', function() {
+      showPage(document.location.hash)
+    })
+
+    //showPage(document.location.hash)
+
+    function showPage(name) {
+      const HOME_PAGE = 'posts'
+
+      name = name.replace(/^#/, '') // normalise, remove leading #
+
+      // default name to HOME_PAGE
+      name = name || HOME_PAGE
+
+      // go to location if it not already there
+      if (document.location.hash !== '#' + name) {
+        document.location.hash = name
+        return
+      }
+
+      console.info('showing', name)
+
+      // hide other pages
+      $('.page').hide()
+
+      // find target
+      var targetPage = $('.page.'+name)
+
+      // display target if exists otherwise go home.
+      if (targetPage.length) targetPage.show()
+      else showPage(HOME_PAGE)
+    }
+
+    $(window).on('hashchange', function() {
+      setActiveNav(document.location.hash)
+    })
+
+    setActiveNav(document.location.hash)
+
+    // Highlight the active navigation item
+    function setActiveNav(name) {
+      console.info('set active nav', name, $('.nav a[href='+name+']'))
+      $('.nav a').removeClass('active')
+      $('.nav a[href='+name+']').addClass('active')
+    }
+
+    showPage(document.location.hash)
   })
+
   if (typeof provide == "function") provide("nodejsau-ender", module.exports);
   $.ender(module.exports);
 }());

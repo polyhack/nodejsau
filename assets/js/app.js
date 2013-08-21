@@ -33,4 +33,55 @@ $.domReady(function () {
         this.innerHTML = this.innerHTML.replace(/</g, '&lt;').replace(/>/g, '&gt;')
       })
     })
+
+  //// Navigation/Page Stuff ////
+
+  $(window).on('hashchange', function() {
+    showPage(document.location.hash)
+  })
+
+  showPage(document.location.hash)
+
+  function showPage(name) {
+    const HOME_PAGE = 'posts'
+
+    name = name.replace(/^#/, '') // normalise, remove leading #
+
+    // default name to HOME_PAGE
+    name = name || HOME_PAGE
+
+    // go to location if it not already there
+    if (document.location.hash !== '#' + name) {
+      document.location.hash = name
+      return
+    }
+
+    console.info('showing', name)
+
+    // hide other pages
+    $('.page').hide()
+
+    // find target
+    var targetPage = $('.page.'+name)
+
+    // display target if exists otherwise go home.
+    if (targetPage.length) targetPage.show()
+    else showPage(HOME_PAGE)
+  }
+
+  // Navigation menu updates
+
+  $(window).on('hashchange', function() {
+    setActiveNav(document.location.hash)
+  })
+
+  setActiveNav(document.location.hash)
+
+  // Highlight the active navigation item
+  function setActiveNav(name) {
+    console.info('set active nav', name, $('.nav a[href='+name+']'))
+    $('.nav a').removeClass('active')
+    $('.nav a[href='+name+']').addClass('active')
+  }
+
 })

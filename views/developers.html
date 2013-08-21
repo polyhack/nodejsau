@@ -1,0 +1,42 @@
+<div class="developers page">
+  <p>This list is gathered from authors of packages published to <a href="https://npmjs.org/">npm</a>, cross-referenced with <a href="http://github.com/">GitHub</a> repositories and the <i>location</i> listed for the owners of those repositories.</p>
+  <p>Find us on <b>Google Groups</b> @ <a href="https://groups.google.com/forum/?fromgroups=#!forum/nodejsau">nodejs.au</a>, on <b><a href="http://freenode.net/">Freenode</a></b> @ #polyhack and on <b>GitHub</b> @ <a href="http://github.com/polyhack">polyhack</a> (where you can also find the source of this site).</p>
+
+  <a href="https://twitter.com/nodejsau" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @nodejsau</a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+  <p>Found {{ users|length }} Aussie npm package authors via GitHub:</p>
+
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Name</th>
+        <th>npm Packages</th>
+        <th>GitHub</th>
+        <th>Twitter</th>
+        <th>Location</th>
+        <th>Blog / URL</th>
+        <th>Company</th>
+        <th>Hireable</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for user in users %}
+      <tr>
+        <td class="avatar"><img src="{{ user.avatar }}"></td>
+        <td class="name"><a href="https://npmjs.org/~{{ user.npmLogin }}">{{ user.name|default(user.npmLogin) }}</a></td>
+        <td class="packages">
+          <a href="#" data-html="true" data-content="&lt;ul&gt;{% for pkg in user.packages %}&lt;li&gt;&lt;b&gt;&lt;a href=&quot;http://npm.im/{{ pkg.name }}&quot;&gt;{{ pkg.name }}&lt;/a&gt;&lt;/b&gt;&lt;span class=&quot;description&quot;&gt; {{ pkg.description|default('') }}&lt;/span&gt;&lt;/li&gt;{% endfor %}&lt;/ul&gt;" data-placement="right" rel="popover" title="Packages">{{ user.packages.length }}</a>
+        </td>
+        <td class="github"><a href="{{ user.githubUrl }}">{{ user.githubLogin }}</a></td>
+        <td class="twitter">{% if twitterMapping[user.githubLogin] %}<a href="https://twitter.com/{{ twitterMapping[user.githubLogin] }}">@{{ twitterMapping[user.githubLogin] }}{% endif %}</a></td>
+        <td class="location">{{ user.location|default('') }}</td>
+        <td class="blog">{% if user.blog %}<a href="{{ user.blog }}">{{ user.blog }}{% endif %}</a></td>
+        <td class="company">{{ user.company|default('') }}</td>
+        <td class="hireable">{% if user.hireable %}Yes{% endif %}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
