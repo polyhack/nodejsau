@@ -34,7 +34,7 @@ $.domReady(function () {
       })
     })
 
-  //// Menu Stuff ////
+  //// Navigation/Page Stuff ////
 
   $(window).on('hashchange', function() {
     showPage(document.location.hash)
@@ -68,4 +68,20 @@ $.domReady(function () {
     if (targetPage.length) targetPage.show()
     else showPage(HOME_PAGE)
   }
+
+  // Navigation menu updates
+
+  $(window).on('hashchange', function() {
+    setActiveNav(document.location.hash)
+  })
+
+  setActiveNav(document.location.hash)
+
+  // Highlight the active navigation item
+  function setActiveNav(name) {
+    console.info('set active nav', name, $('.nav a[href='+name+']'))
+    $('.nav a').removeClass('active')
+    $('.nav a[href='+name+']').addClass('active')
+  }
+
 })
