@@ -56,8 +56,6 @@ $.domReady(function () {
       return
     }
 
-    console.info('showing', name)
-
     // hide other pages
     $('.page').hide()
 
@@ -79,7 +77,6 @@ $.domReady(function () {
 
   // Highlight the active navigation item
   function setActiveNav(name) {
-    console.info('set active nav', name, $('.nav a[href='+name+']'))
     $('.nav a').removeClass('active')
     $('.nav a[href='+name+']').addClass('active')
   }
