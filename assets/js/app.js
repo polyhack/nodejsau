@@ -33,4 +33,39 @@ $.domReady(function () {
         this.innerHTML = this.innerHTML.replace(/</g, '&lt;').replace(/>/g, '&gt;')
       })
     })
+
+  //// Menu Stuff ////
+
+  $(window).on('hashchange', function() {
+    showPage(document.location.hash)
+  })
+
+  showPage(document.location.hash)
+
+  function showPage(name) {
+    const HOME_PAGE = 'posts'
+
+    name = name.replace(/^#/, '') // normalise, remove leading #
+
+    // default name to HOME_PAGE
+    name = name || HOME_PAGE
+
+    // go to location if it not already there
+    if (document.location.hash !== '#' + name) {
+      document.location.hash = name
+      return
+    }
+
+    console.info('showing', name)
+
+    // hide other pages
+    $('.page').hide()
+
+    // find target
+    var targetPage = $('.page.'+name)
+
+    // display target if exists otherwise go home.
+    if (targetPage.length) targetPage.show()
+    else showPage(HOME_PAGE)
+  }
 })
