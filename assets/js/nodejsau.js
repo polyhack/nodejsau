@@ -4015,41 +4015,8 @@
   var module = { exports: {} }, exports = module.exports;
 
   /*global $*/
-  $.domReady(function () {
-    var $activePopover
-      , cleanupPopover = function () {
-          if (!$activePopover) return
-          $activePopover.popover('hide')
-          $activePopover = null
-        }
 
-    // close popover if there is one active and a click is registered anywhere else
-    $('body').on('click', function (e) {
-      $activePopover
-        && !$(e.target).closest('.popover,a[rel=popover]').length
-        && cleanupPopover()
-    })
-
-    $('a[rel=popover]')
-      .popover()
-      .on('click', function(e) {
-        e.preventDefault()
-        cleanupPopover()
-        $activePopover = $(e.target)
-
-        var $tip = $activePopover.data('popover').$tip
-          , top  = $tip.css('top').replace(/px$/, '') * 1
-
-        if (top < 70) {
-          $tip.css({ top: '70px' })
-          $tip.down('.arrow').css('top', $activePopover.offset().top - 70 + 8)
-        }
-
-        $tip.down('.description').each(function () {
-          this.innerHTML = this.innerHTML.replace(/</g, '&lt;').replace(/>/g, '&gt;')
-        })
-      })
-
+  function setupNavigation () {
     //// Navigation/Page Stuff ////
 
     $(window).on('hashchange', function() {
@@ -4092,11 +4059,54 @@
     setActiveNav(document.location.hash)
 
     // Highlight the active navigation item
-    function setActiveNav(name) {
+    function setActiveNav (name) {
+      console.log('setActiveNav', name)
       $('.nav a').removeClass('active')
-      $('.nav a[href='+name+']').addClass('active')
+      $('.nav a[href=/' + name + ']').addClass('active')
     }
+  }
 
+  function setupDevelopersList () {
+    var $activePopover
+      , cleanupPopover = function () {
+          if (!$activePopover) return
+          $activePopover.popover('hide')
+          $activePopover = null
+        }
+
+    // close popover if there is one active and a click is registered anywhere else
+    $('body').on('click', function (e) {
+      $activePopover
+        && !$(e.target).closest('.popover,a[rel=popover]').length
+        && cleanupPopover()
+    })
+
+    $('a[rel=popover]')
+      .popover()
+      .on('click', function(e) {
+        e.preventDefault()
+        cleanupPopover()
+        $activePopover = $(e.target)
+
+        var $tip = $activePopover.data('popover').$tip
+          , top  = $tip.css('top').replace(/px$/, '') * 1
+
+        if (top < 70) {
+          $tip.css({ top: '70px' })
+          $tip.down('.arrow').css('top', $activePopover.offset().top - 70 + 8)
+        }
+
+        $tip.down('.description').each(function () {
+          this.innerHTML = this.innerHTML.replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        })
+      })
+  }
+
+  $.domReady(function () {
+    if ($('.index-page').length) {
+      setupDevelopersList()
+      setupNavigation()
+    }
   })
 
   if (typeof provide == "function") provide("nodejsau-ender", module.exports);

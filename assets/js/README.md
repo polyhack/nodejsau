@@ -1,7 +1,7 @@
 You'll need Ender installed for this, use the 1.0 pre-release version:
 
 ```sh
-$ npm install ender@dev -g
+$ npm install ender -g
 ```
 
 Then when you edit *app.js* run:
