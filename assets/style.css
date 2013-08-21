@@ -102,6 +102,10 @@ td.avatar {
   color: black;
 }
 
+.post .permalink {
+  font-style: italic;
+}
+
 .post-body {
   line-height: 150%;
   margin-bottom: 1em;
