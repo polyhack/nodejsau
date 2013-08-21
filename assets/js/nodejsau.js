@@ -4056,7 +4056,7 @@
       showPage(document.location.hash)
     })
 
-    //showPage(document.location.hash)
+    showPage(document.location.hash)
 
     function showPage(name) {
       const HOME_PAGE = 'posts'
@@ -4072,8 +4072,6 @@
         return
       }
 
-      console.info('showing', name)
-
       // hide other pages
       $('.page').hide()
 
@@ -4085,6 +4083,8 @@
       else showPage(HOME_PAGE)
     }
 
+    // Navigation menu updates
+
     $(window).on('hashchange', function() {
       setActiveNav(document.location.hash)
     })
@@ -4093,12 +4093,10 @@
 
     // Highlight the active navigation item
     function setActiveNav(name) {
-      console.info('set active nav', name, $('.nav a[href='+name+']'))
       $('.nav a').removeClass('active')
       $('.nav a[href='+name+']').addClass('active')
     }
 
-    showPage(document.location.hash)
   })
 
   if (typeof provide == "function") provide("nodejsau-ender", module.exports);
