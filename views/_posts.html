@@ -1,10 +1,8 @@
-{% if posts %}
 
 <div class="posts page row">
-
+{% if posts %}
   {% for post in posts %}
     {% include "_post.html" %}
   {% endfor %}
-
-</div>
 {% endif %}
+</div>
