@@ -9,7 +9,7 @@ function setupNavigation () {
 
   showPage(document.location.hash)
 
-  function showPage(name) {
+  function showPage(name, doNotRetry) {
     const HOME_PAGE = 'posts'
 
     name = name.replace(/^#/, '') // normalise, remove leading #
@@ -31,7 +31,7 @@ function setupNavigation () {
 
     // display target if exists otherwise go home.
     if (targetPage.length) targetPage.show()
-    else showPage(HOME_PAGE)
+    else doNotRetry || showPage(HOME_PAGE, true)
   }
 
   // Navigation menu updates
