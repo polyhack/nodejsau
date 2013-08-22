@@ -1,0 +1,28 @@
+<div class="meetups page">
+  <p>Aussie Node.JS and JavaScript meetups, user groups and conferences</p>
+  <p>To add meetup, edit <a href="https://github.com/polyhack/nodejsau/edit/master/meetups.json">meetups.json</a> and submit pull request</p>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Twitter</th>
+        <th>Location</th>
+        <th>Blog / URL</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for meetup in meetups %}
+      <tr>
+        <td class="avatar"><img src="{{ meetup.logo }}"></td>
+        <td class="name">{{ meetup.name }}</a></td>
+        <td class="description">{{ meetup.description }}</a></td>
+        <td class="twitter">{% if meetup.twitter %}<a href="https://twitter.com/{{ meetup.twitter }}">@{{meetup.twitter}}</a>{% endif %}</td>
+        <td class="location">{{ meetup.location}}</td>
+        <td class="blog"><a href="{{ meetup.url }}">{{ meetup.url }}</a></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
