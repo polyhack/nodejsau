@@ -16,7 +16,7 @@
     "mmm.xn--pou-5eb.com"
   ],
   "scripts": {
-    "start": "index.js"
+    "start": "node index.js"
   },
   "dependencies": {
     "swig": "~0.13.5",
