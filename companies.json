@@ -4,6 +4,7 @@
   "name": "Locomote",
   "logo": "https://0.gravatar.com/avatar/a73ba7eb164d49cf1756b1a7d9ac6d9c?d=https%3A%2F%2Fidenticons.github.com%2Fbfdd96779ae64e483025c8f0da8f76a0.png&s=100",
   "url":  "http://locomote.com",
+  "description": "Locomote develops corporate travel menagement software. Node.js powers api servers and clients to 3rd party SOAP services",
   "githubUrl": "https://github.com/locomote/",
   "githubLogin": "locomote",
   "twitter": "locomotegroup",

@@ -7,6 +7,7 @@
       <tr>
         <th></th>
         <th>Name</th>
+        <th>Description</th>
         <th>GitHub</th>
         <th>Twitter</th>
         <th>Location</th>
@@ -19,6 +20,7 @@
       <tr>
         <td class="logo"><img src="{{ company.logo }}"></td>
         <td class="name"><a href="{{ company.url }}">{{ company.name }}</a></td>
+        <td class="name">{{ company.description }}</td>
         <td class="github"><a href="{{ company.githubUrl }}">{{ company.githubLogin }}</a></td>
         <td class="twitter"><a href="https://twitter.com/{{ company.twitter }}">@{{ company.twitter }}</a></td>
         <td class="location">{{ company.location|default('') }}</td>
