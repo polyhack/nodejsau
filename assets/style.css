@@ -71,13 +71,25 @@ table.table td {
 
 td.avatar {
   text-align: center;
-      height: 64px;
-       width: 64px;
+      height: 48px;
+       width: 48px;
 }
 
-.avatar img {
-  max-height: 64px;
-   max-width: 64px;
+td.logo {
+  text-align: center;
+      height: 96px;
+      width: 96px;
+}
+
+td.avatar img {
+  max-height: 48px;
+   max-width: 48px;
+  box-shadow: 1px 1px 8px rgba(0,0,0,0.33);
+}
+
+td.logo img {
+  max-height: 96px;
+   max-width: 96px;
   box-shadow: 1px 1px 8px rgba(0,0,0,0.33);
 }
 
