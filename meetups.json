@@ -1,0 +1,36 @@
+[
+
+{
+  "name": "CampJS",
+  "logo": "http://campjs.com/logo.png",
+  "url":  "http://campjs.com",
+  "description": "&quot;Bringing together the most awesome JavaScript talent from Australia &amp; worldwide.&quot;",
+  "location": "Gold Coast, Melbourne",
+  "twitter": "campjsnews"
+},
+{
+  "name": "MelbNodeJS",
+  "logo": "http://photos1.meetupstatic.com/photos/event/a/2/e/6/global_88481702.jpeg",
+  "url":  "www.meetup.com/MelbNodeJS/",
+  "description": "Melbourne node.js meetup",
+  "location": "Melbourne",
+  "twitter": "melbnodejs"
+},
+{
+  "name": "MelbJS",
+  "logo": "http://melbjs.com/public/img/logo.png",
+  "url":  "http://melbjs.com/",
+  "description": "Melbourne JavaScript",
+  "location": "Melbourne",
+  "twitter": "melbjs"
+},
+{
+   "name": "Node.ninjas",
+   "logo": "http://photos2.meetupstatic.com/photos/event/8/6/b/c/global_172414492.jpeg",
+   "url":  "http://www.meetup.com/sydney-node-ninjas/",
+   "description": "Sydney Node.js community",
+   "location": "Sydney",
+   "twitter": ""
+}
+
+]
