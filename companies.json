@@ -11,5 +11,15 @@
   "hiring": "http://www.linkedin.com/jobs?viewJob=&jobId=6902546",
   "location": "Melbourne"
 }
+,
+{
+  "name" : "Centric Web Estate",
+  "logo" : "https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-ash4/1004726_580803511959715_2040702252_n.jpg",
+  "url" : "http://centricwebestate.com",
+  "description" : "Centric Web Estate takes your web property and grows your investment. Using next generation technologies such as MongoDB & Node.js; we strive prosper your web estate and help your business succeed",
+  "githubUrl" : "https://github.com/CentricWebEstate/",
+  "githubLogin" : "CentricWebEstate",
+  "location" : "Brisbane"
+}
 
 ]
