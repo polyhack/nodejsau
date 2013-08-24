@@ -1,7 +1,7 @@
 {
   "name": "nodejsau",
   "author": "",
-  "version": "2.8.1",
+  "version": "2.8.2",
   "private": true,
   "main": "index.js",
   "subdomain": "nodejsau",
