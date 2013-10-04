@@ -22,5 +22,16 @@
   "location" : "Brisbane",
   "twitter" : "CentricWebHQ"
 }
+,
+{
+  "name" : "Bevry",
+  "logo" : "https://2.gravatar.com/avatar/d4940039916de3ee1f06266b659b3c62?d=https%3A%2F%2Fidenticons.github.com%2F31a71c3fc821b232a1775f294c029c6e.png&s=100",
+  "url" : "http://bevry.me",
+  "description" : "We’re a Sydney based Node.js, JavaScript and HTML5 company focused on empowering developers.",
+  "githubUrl" : "https://github.com/bevry/",
+  "githubLogin" : "bevry",
+  "location" : "Sydney",
+  "twitter" : "BevryMe"
+}
 
 ]
