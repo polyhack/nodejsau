@@ -31,6 +31,13 @@
    "description": "Sydney Node.js community",
    "location": "Sydney",
    "twitter": ""
+},
+{
+   "name": "BrisJS",
+   "logo": "http://photos3.meetupstatic.com/photos/event/b/8/1/8/global_15527128.jpeg",
+   "url":  "http://www.meetup.com/BrisJS/",
+   "description": "Brisbane JavaScript",
+   "location": "Brisbane",
+   "twitter": "BrisJS"
 }
-
 ]
