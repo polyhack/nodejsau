@@ -33,5 +33,16 @@
   "location" : "Sydney",
   "twitter" : "BevryMe"
 }
+,
+{
+  "name" : "Small Multiples",
+  "logo" : "http://smallmu-sandbox.s3-ap-southeast-1.amazonaws.com/logo.png",
+  "url" : "http://small.mu",
+  "description" : "We help people see trends in opinion polls, find scientific patents, and compare cattle prices. Small Multiples builds the data visualisation tools for unlocking the potential of your data.",
+  "githubUrl" : "https://github.com/smallmultiples/",
+  "githubLogin" : "smallmultiples",
+  "location" : "Sydney",
+  "twitter" : "smallmultiples"
+}
 
 ]
