@@ -19,10 +19,10 @@
       <tr>
         <td class="logo"><img src="{{ company.logo }}"></td>
         <td class="name"><a href="{{ company.url }}">{{ company.name }}</a></td>
-        <td class="description">{{ company.description }}</td>
-        <td class="github"><a href="{{ company.githubUrl }}">{{ company.githubLogin }}</a></td>
-        <td class="twitter"><a href="https://twitter.com/{{ company.twitter }}">@{{ company.twitter }}</a></td>
-        <td class="location">{{ company.location|default('') }}</td>
+        <td class="description">{% if company.description %} {{ company.description }} {% endif %}</td>
+        <td class="github">{% if company.githubLogin && company.githubUrl %}<a href="{{ company.githubUrl }}">{{ company.githubLogin }}</a>{% endif %}</td>
+        <td class="twitter">{% if company.twitter %}<a href="https://twitter.com/{{ company.twitter }}">@{{ company.twitter }}</a>{% endif %}</td>
+        <td class="location">{% if company.location %} {{ company.location }} {% endif %}</td>
         <td class="blog">{% if company.url %}<a href="{{ company.url }}">{{ company.url }}{% endif %}</a></td>
         <td class="hiring">{% if company.hiring %}<a href="{{ company.hiring }}">Yes</a>{% endif %}</td>
       </tr>
