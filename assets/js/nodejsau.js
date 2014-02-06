@@ -4026,7 +4026,7 @@
     showPage(document.location.hash)
 
     function showPage(name, doNotRetry) {
-      const HOME_PAGE = 'posts'
+      const HOME_PAGE = 'developers'
 
       name = name.replace(/^#/, '') // normalise, remove leading #
 
