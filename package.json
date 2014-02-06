@@ -20,8 +20,8 @@
   },
   "dependencies": {
     "swig": "~0.13.5",
-    "splinky": "~0.1.1",
-    "npm-maintainers-au": "*",
+    "splinky": "~0.6.2",
+    "npm-maintainers-au": "0.0.1",
     "hyperquest": "~0.1.7",
     "bl": "~0.1.1",
     "brucedown": "~0.0.1",
