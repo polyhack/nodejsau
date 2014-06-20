@@ -39,5 +39,13 @@
    "description": "Brisbane JavaScript",
    "location": "Brisbane",
    "twitter": "BrisJS"
+},
+{
+   "name": "SydJS",
+   "logo": "http://res.cloudinary.com/sydjs/image/upload/c_fit,f_auto,h_420,w_720/rwi2mnwxn1ddkhdkfnel.png",
+   "url":  "http://www.sydjs.com/",
+   "description": "Sydney JavaScript",
+   "location": "Sydney",
+   "twitter": "SydJS"
 }
 ]
