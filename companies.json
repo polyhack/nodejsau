@@ -13,6 +13,17 @@
 }
 ,
 {
+  "name" : "PNI",
+  "logo" : "http://pni.com.au/public-sites/alice/sites/pni/images/matrix-pni.1386552075.png",
+  "url" : "http://pni.com.au",
+  "description" : "PNI develops solutions to benefit companies across all industry types.",
+  "githubUrl" : "https://github.com/yoik",
+  "githubLogin" : "yoik",
+  "location" : "Brisbane",
+  "hiring": "mailto:careers@pni.com.au"
+}
+,
+{
   "name" : "Centric Web Estate",
   "logo" : "https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-ash4/1004726_580803511959715_2040702252_n.jpg",
   "url" : "http://centricwebestate.com",
