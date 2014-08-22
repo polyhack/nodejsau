@@ -55,5 +55,16 @@
   "location" : "Sydney",
   "twitter" : "smallmultiples"
 }
-
+,
+{
+  "name": "iSignthis",
+  "logo": "https://avatars2.githubusercontent.com/u/8518738",
+  "url":  "https://www.isignthis.com",
+  "description": "Identity and payments authentication",
+  "githubUrl": "https://github.com/iSignthis/",
+  "githubLogin": "iSignthis",
+  "twitter": "iSignthis_ltd",
+  "hiring": "http://www.seek.com.au/Job/27126946",
+  "location": "Melbourne"
+}
 ]
