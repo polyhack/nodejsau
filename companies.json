@@ -1,5 +1,17 @@
 [
-
+{
+  "name": "OZOS",
+  "logo": "http://www.ozos.com.au/img/logo/ozos_img_nodejs.png",
+  "url":  "http://www.ozos.com.au",
+  "description": OZOS is an emerging IT Solution provider located in Australia Melbourne. The company was founded in 2011 and now it is one of the leading IT service providers in Australia by providing quality service at competitive price. IT services are including Website  Design, eCommerce Solutions, Web Development, Mobile Development, Web Apps, Mobile Apps, SEO and etc.  We have done over 400+ online eCommerce stores and online applications. Our team comprises accomplished professionals who have worked with leading global organization. Each team member brings IT domain expertise ensuring customer satisfaction. ",
+  "githubUrl": "https://github.com/ozoscom/",
+  "githubLogin": "ozoscom",
+  "twitter": "OzosSolutions",
+  "hiring": "http://www.ozos.com.au",
+  "location": "Melbourne",
+  "hiring":"mailto:info@ozos.com.au"
+}
+,
 {
   "name": "Locomote",
   "logo": "https://0.gravatar.com/avatar/a73ba7eb164d49cf1756b1a7d9ac6d9c?d=https%3A%2F%2Fidenticons.github.com%2Fbfdd96779ae64e483025c8f0da8f76a0.png&s=100",
