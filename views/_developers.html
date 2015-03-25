@@ -23,6 +23,18 @@
     </thead>
     <tbody>
     {% for user in users %}
+
+      {% set twitterHandle = "" %}
+
+      {% if twitterMapping[user.githubLogin] %}
+        {% set twitterHandle = twitterMapping[user.githubLogin] %}
+      {% else %}
+          {% set foo = user.githubLogin|lower %}
+        {% if twitterMapping[foo] %}
+          {% set twitterHandle = twitterMapping[foo] %}
+        {% endif %}
+      {% endif %}
+
       <tr>
         <td class="avatar"><img src="{{ user.avatar }}"></td>
         <td class="name"><a href="https://npmjs.org/~{{ user.npmLogin }}">{{ user.name|default(user.npmLogin) }}</a></td>
@@ -30,7 +42,7 @@
           <a href="#" data-html="true" data-content="&lt;ul&gt;{% for pkg in user.packages %}&lt;li&gt;&lt;b&gt;&lt;a href=&quot;http://npm.im/{{ pkg.name }}&quot;&gt;{{ pkg.name }}&lt;/a&gt;&lt;/b&gt;&lt;span class=&quot;description&quot;&gt; {{ pkg.description|default('') }}&lt;/span&gt;&lt;/li&gt;{% endfor %}&lt;/ul&gt;" data-placement="right" rel="popover" title="Packages">{{ user.packages.length }}</a>
         </td>
         <td class="github"><a href="{{ user.githubUrl }}">{{ user.githubLogin }}</a></td>
-        <td class="twitter">{% if twitterMapping[user.githubLogin] %}<a href="https://twitter.com/{{ twitterMapping[user.githubLogin] }}">@{{ twitterMapping[user.githubLogin] }}{% endif %}</a></td>
+        <td class="twitter">{% if twitterHandle %}<a href="https://twitter.com/{{ twitterHandle }}">@{{ twitterHandle }}{% endif %}</a></td>
         <td class="location">{{ user.location|default('') }}</td>
         <td class="blog">{% if user.blog %}<a href="{{ user.blog }}">{{ user.blog }}{% endif %}</a></td>
         <td class="company">{{ user.company|default('') }}</td>
