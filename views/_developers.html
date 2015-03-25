@@ -29,9 +29,9 @@
       {% if twitterMapping[user.githubLogin] %}
         {% set twitterHandle = twitterMapping[user.githubLogin] %}
       {% else %}
-          {% set foo = user.githubLogin|lower %}
-        {% if twitterMapping[foo] %}
-          {% set twitterHandle = twitterMapping[foo] %}
+          {% set lowerCaseLogin = user.githubLogin|lower %}
+        {% if twitterMapping[lowerCaseLogin] %}
+          {% set twitterHandle = twitterMapping[lowerCaseLogin] %}
         {% endif %}
       {% endif %}
 
