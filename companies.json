@@ -1,5 +1,17 @@
 [
-  {
+{
+  "name" : "Thinkmill",
+  "logo" : "https://avatars1.githubusercontent.com/u/5761457?v=3&s=200",
+  "url" : "http://www.thinkmill.com.au",
+  "description" : "An integrated team of designers, developers and business strategy types. We help our clients build digital products and services for web and mobile",
+  "githubUrl" : "https://github.com/Thinkmill",
+  "githubLogin" : "Thinkmill",
+  "location" : "Sydney",
+  "twitter" : "thethinkmill",
+  "hiring": "mailto:hello@thinkmill.com.au"
+}
+,
+{
   "name": "Snappy Apps",
   "logo": "https://avatars0.githubusercontent.com/u/5875053?v=3&s=96",
   "url":  "http://www.snappy-apps.com.au",
@@ -9,8 +21,8 @@
   "twitter": "snappyappsau",
   "hiring": "mailto:sales@snappyapps.com.au",
   "location": "Brisbane"
-},
-
+}
+,
 {
   "name": "Locomote",
   "logo": "https://0.gravatar.com/avatar/a73ba7eb164d49cf1756b1a7d9ac6d9c?d=https%3A%2F%2Fidenticons.github.com%2Fbfdd96779ae64e483025c8f0da8f76a0.png&s=100",
