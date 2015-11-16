@@ -47,6 +47,17 @@
 }
 ,
 {
+  "name" : "Psychwire",
+  "logo" : "https://avatars0.githubusercontent.com/u/9955977?v=3&s=200  ",
+  "url" : "http://www.psychwire.org/",
+  "description" : "For researchers, practitioners and allied professionals of mental health and behavioral science",
+  "githubUrl" : "https://github.com/Psychwire",
+  "githubLogin" : "Psychwire",
+  "location" : "Byron Bay",
+  "hiring": "mailto:hr@psychwire.org"
+}
+,
+{
   "name" : "Centric Web Estate",
   "logo" : "https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-ash4/1004726_580803511959715_2040702252_n.jpg",
   "url" : "http://centricwebestate.com",
