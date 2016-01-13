@@ -100,5 +100,15 @@
   "twitter": "iSignthis_ltd",
   "hiring": "http://www.seek.com.au/Job/27126946",
   "location": "Melbourne"
+},
+{
+  "name": "Mom's Friendly Development Company",
+  "logo": "https://avatars1.githubusercontent.com/u/3302491?v=3&s=200",
+  "url":  "http://mfdc.biz",
+  "description": "A small boutique technology development company that specialises in being friendly!",
+  "githubUrl": "https://github.com/orgs/MomsFriendlyDevCo",
+  "githubLogin": "MomsFriendlyDevCo",
+  "hiring": "mailto:info@mfdc.biz",
+  "location": "Gold Coast"
 }
 ]
