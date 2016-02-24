@@ -111,4 +111,14 @@
   "hiring": "mailto:info@mfdc.biz",
   "location": "Gold Coast"
 }
+,
+{
+  "name": "Exclusive Software",
+  "logo": "http://exclusivesoftware.com.au/wp-content/uploads/2015/12/ES-Horiz-Logo.png",
+  "url":  "http://exclusivesoftware.com.au",
+  "description": "A regional development business in country NSW",
+  "githubUrl": "https://github.com/ExclusiveSoftware",
+  "githubLogin": "ExclusiveSoftware",
+  "location": "Deniliquin, NSW"
+}
 ]
