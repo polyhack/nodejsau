@@ -1,4 +1,14 @@
-[
+[{
+  "name" : "Style Atlas",
+  "logo" : "http://style-atlas.github.io/assets/SA-logo-web_100-black-v2.png",
+  "url" : "http://styleatlas.co",
+  "description" : "A Fashion Tech startup solving the fitting challenge faced by online shoppers",
+  "githubUrl" : "https://github.com/styleatlas",
+  "githubLogin" : "Style-Atlas",
+  "location" : "Sydney",
+  "twitter" : "style_atlas",
+  "hiring": "mailto:dev@styleatlas.co"
+},
 {
   "name" : "Thinkmill",
   "logo" : "https://avatars1.githubusercontent.com/u/5761457?v=3&s=200",
