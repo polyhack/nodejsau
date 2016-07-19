@@ -131,4 +131,16 @@
   "githubLogin": "ExclusiveSoftware",
   "location": "Deniliquin, NSW"
 }
+,
+{
+  "name": "Loan Market",
+  "logo": "https://avatars1.githubusercontent.com/u/20532238",
+  "url":  "https://www.loanmarket.com.au",
+  "description": "Loan Market is one of Australasia's largest retail Mortgage Broker groups and a part of the Ray White group of companies.",
+  "githubUrl": "https://github.com/loanmarket",
+  "githubLogin": "loanmarket",
+  "location": "Sydney",
+  "twitter" : "style_atlas",
+  "hiring": "mailto:dev@styleatlas.co"
+}
 ]
