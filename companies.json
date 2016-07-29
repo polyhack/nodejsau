@@ -141,4 +141,16 @@
   "githubLogin": "loanmarket",
   "location": "Sydney"
 }
+,
+{
+  "name": "iflix",
+  "logo": "https://i.imgur.com/uOH7bYv.jpg",
+  "url": "https://iflix.com",
+  "description": "Southeast Asia’s leading Internet TV service",
+  "twitter": "iflixmy",
+  "githubUrl": "https://github.com/iflix-letsplay",
+  "githubLogin": "iflix-letsplay",
+  "location": "Melbourne",
+  "hiring": "https://jobs.lever.co/iflix.com/3fdf783b-aa07-4947-8c4d-623e26aa7e9b"
+}
 ]
