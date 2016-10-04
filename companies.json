@@ -1,4 +1,15 @@
 [{
+  "name" : "Soul Digital",
+  "logo" : "https://avatars.githubusercontent.com/u/6466322?v=3",
+  "url" : "https://www.souldigital.com.au/",
+  "description" : "Soul Digital is a leading digital agency in Melbourne specialising in digital strategy, web design & web development. Let's be Soulmates.",
+  "githubUrl" : "https://github.com/souldigital",
+  "githubLogin" : "souldigital",
+  "location": "South Melbourne",
+  "twitter" : "SoulDigitalMelb",
+  "hiring": "https://www.souldigital.com.au/contact/"
+},
+{
   "name" : "Style Atlas",
   "logo" : "http://style-atlas.github.io/assets/SA-logo-web_100-black-v2.png",
   "url" : "http://styleatlas.co",
