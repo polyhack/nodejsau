@@ -152,5 +152,16 @@
   "githubLogin": "iflix-letsplay",
   "location": "Melbourne",
   "hiring": "https://jobs.lever.co/iflix.com/3fdf783b-aa07-4947-8c4d-623e26aa7e9b"
+},
+{
+  "name": "atlassian",
+  "logo": "https://avatars3.githubusercontent.com/u/168166?v=3&s=200",
+  "url": "https://www.atlassian.com",
+  "description": "Building tools & platforms for teams, from startup to enterprise: Confluence, JIRA, Bitbucket & HipChat.",
+  "twitter": "atlassian",
+  "githubUrl": "https://github.com/atlassian",
+  "githubLogin": "atlassian",
+  "location": "Sydney, San Francisco, Austin, and more!",
+  "hiring": "https://www.atlassian.com/company/careers"
 }
 ]
