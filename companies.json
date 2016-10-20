@@ -164,4 +164,16 @@
   "location": "Sydney, San Francisco, Austin, and more!",
   "hiring": "https://www.atlassian.com/company/careers"
 }
+,
+{
+  "name" : "Soul Digital",
+  "logo" : "https://avatars.githubusercontent.com/u/6466322?v=3",
+  "url" : "https://www.souldigital.com.au/",
+  "description" : "Soul Digital is a leading digital agency in Melbourne specialising in digital strategy, web design & web development. Let's be Soulmates.",
+  "githubUrl" : "https://github.com/souldigital",
+  "githubLogin" : "souldigital",
+  "location": "South Melbourne",
+  "twitter" : "SoulDigitalMelb",
+  "hiring": "https://www.souldigital.com.au/contact/"
+} 
 ]
