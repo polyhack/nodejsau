@@ -176,4 +176,16 @@
   "twitter" : "SoulDigitalMelb",
   "hiring": "https://www.souldigital.com.au/contact/"
 } 
+,
+{
+ "name" : "Shroogal",
+ "logo" : "http://shroogal.com.au/images/logo.jpg",
+ "url" : "http://shroogal.com.au/",
+ "description" : "Redesigning personal financial advice for the broader population.",
+ "githubUrl" : "https://github.com/Shroogal",
+ "githubLogin" : "",
+ "location": "Melbourne, Australia",
+ "twitter" : "",
+ "hiring": "http://shroogal.com.au/#work"
+} 
 ]
