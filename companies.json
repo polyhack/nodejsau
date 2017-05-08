@@ -175,6 +175,18 @@
   "location": "South Melbourne",
   "twitter" : "SoulDigitalMelb",
   "hiring": "https://www.souldigital.com.au/contact/"
+}
+,
+{
+  "name" : "Fluent Development",
+  "logo" : "https://fluentdevelopment.com.au/images/Fluent-Development-Logo-Social.png",
+  "url" : "https://fluentdevelopment.com.au",
+  "description" : "Fluent Development is a software and web consultancy and development house based in Warrnambool in south-west Victoria, Australia, established to facilitate our vision to produce high quality software, web and integration solutions.",
+  "githubUrl" : "https://github.com/fluentdevelopment/",
+  "githubLogin" : "fluentdevelopment",
+  "location": "Warrnambool, VIC",
+  "twitter" : "fluentdevau",
+  "hiring": "https://fluentdevelopment.com.au/contact/"
 } 
 ,
 {
@@ -187,7 +199,8 @@
  "location": "Melbourne, Australia",
  "twitter" : "",
  "hiring": "http://shroogal.com.au/#work"
-},
+}
+,
 {
   "name" : "Rocket Lab",
   "logo" : "https://avatars.githubusercontent.com/u/20530128?v=3",
