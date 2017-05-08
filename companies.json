@@ -175,5 +175,16 @@
   "location": "South Melbourne",
   "twitter" : "SoulDigitalMelb",
   "hiring": "https://www.souldigital.com.au/contact/"
-} 
+},
+{
+  "name" : "Rocket Lab",
+  "logo" : "https://avatars.githubusercontent.com/u/20530128?v=3",
+  "url" : "https://www.rocketlab.com.au",
+  "description" : "Rocket Lab Pty Ltd is a privately owned company based in Sydney, specialising in web design & development, mobile applications design & development, and digital marketing. Rocket Lab provides Australian & APAC brands with online support & strategies to drive innovative solutions. Our dedicated staff & support team are experienced in React.js, React Native & Node.js.",
+  "githubUrl" : "https://github.com/TheRocketLab",
+  "githubLogin" : "TheRocketLab",
+  "location": "Surry Hills, Sydney",
+  "twitter" : "lerocketlab",
+  "hiring": "https://www.rocketlab.com.au/jobs/"
+}
 ]
