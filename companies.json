@@ -211,5 +211,16 @@
   "location": "Surry Hills, Sydney",
   "twitter" : "lerocketlab",
   "hiring": "https://www.rocketlab.com.au/jobs/"
+},
+{
+  "name" : "OpenClub",
+  "logo" : "https://avatars1.githubusercontent.com/u/23668152?v=3",
+  "url" : "https://www.openclub.co",
+  "description" : "OpenClub is a Brisbane-based startup building community management and networking software. We have a great stack using React, GraphQL and Node — we're always looking for new people.",
+  "githubUrl" : "https://github.com/OpenClubDev",
+  "githubLogin" : "OpenClubDev",
+  "location": "Brisbane, Australia",
+  "twitter" : "openclubapp",
+  "hiring": "https://angel.co/openclub/jobs/"
 }
 ]
