@@ -24,8 +24,8 @@
 {
   "name": "Snappy Apps",
   "logo": "https://avatars0.githubusercontent.com/u/5875053?v=3&s=96",
-  "url":  "http://www.snappy-apps.com.au",
-  "description": "Snappy Apps develops a wide range of web apps using Express, Jade, Mongoose",
+  "url":  "https://www.snappyapps.com.au",
+  "description": "Snappy Apps develops a wide range of web apps using Express, Jade, Mongoose. Mobile Apps are currently written in React Native or Flutter",
   "githubUrl": "https://github.com/rknell/",
   "githubLogin": "rknell",
   "twitter": "snappyappsau",
