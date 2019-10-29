@@ -23,7 +23,7 @@
     "splinky": "~0.6.2",
     "npm-maintainers-au": "0.0.1",
     "hyperquest": "~0.1.7",
-    "bl": "~0.1.1",
+    "bl": "~4.0.0",
     "brucedown": "~0.0.1",
     "map-async": "~0.1.1"
   },
